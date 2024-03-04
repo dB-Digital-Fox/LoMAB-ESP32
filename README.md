@@ -8,6 +8,7 @@ LoRa@FIIT Multi-armed Bandit  Firmware for ESP32 within Arduino framework
 - Install necessary extension **atmel-avr** for PlatformIO.
 - Install FT232RTL driver for Windows
 - Clone repository [LoMAB-ESP](https://github.com/dB-Digital-Fox/LoMAB-ESP32.git)
+- Into the lib clone [LoRaFIIT-ESP](https://github.com/dB-Digital-Fox/LoMAB-ESP32.git)
 - In **"lib/src/lora.h"**, look for the **"MAB_UCB_ENABLED"** and **"CAD_ENABLED"** macros. If needed, set them to 0.
 - In **"lib/src/RH_RF95.h"**, look for the **"DEVICE_ID"** macros. Set all of these macros to the hexadecimal value of your end-device. (e.g. if your end-device has device ID set to "E", set all of these macros to "0xEE")
 - Import your preshared key into the DH.H in hexadecimal value
