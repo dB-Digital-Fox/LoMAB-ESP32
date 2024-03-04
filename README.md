@@ -10,7 +10,7 @@ LoRa@FIIT Multi-armed Bandit  Firmware for ESP32 within Arduino framework
 - Clone repository [LoMAB-ESP](https://github.com/dB-Digital-Fox/LoMAB-ESP32.git)
 - In **"lib/src/lora.h"**, look for the **"MAB_UCB_ENABLED"** and **"CAD_ENABLED"** macros. If needed, set them to 0.
 - In **"lib/src/RH_RF95.h"**, look for the **"DEVICE_ID"** macros. Set all of these macros to the hexadecimal value of your end-device. (e.g. if your end-device has device ID set to "E", set all of these macros to "0xEE")
-- Connect the LoRa Radio Node to your computer using an FT232RTL USB-to-TTL converter.
+- Import your preshared key into the DH.H in hexadecimal value
 - Build the solution to verify that the necessary dependencies are installed. If not, install the missing ones.
 - Upload the code to the end-device and start the serial monitor.
 
