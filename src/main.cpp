@@ -13,7 +13,7 @@ lora lorafiit(RFM_CS, RFM_INT, RFM_RST);
 void setup() {
   Serial.flush();
   while(!Serial);
-  Serial.begin(9600);//Sets Baud rate
+  Serial.begin(115200);//Sets Baud rate
   Serial.flush();
   delay(100);
 
