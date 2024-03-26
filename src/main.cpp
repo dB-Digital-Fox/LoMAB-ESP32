@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <lora.h>
+#include <SPI.h>
 
 #define RFM_CS 27 //chipselect pin, MISO
 #define RFM_RST 23 //reset pin, RST
@@ -8,9 +9,13 @@
 #define BUFFER_LEN 20
 #define APP_DATA_LEN 7
 
-lora lorafiit(RFM_CS, RFM_INT, RFM_RST);
+// VSPI for Teensy or other boards that have multiple SPI buses
+SPIClass mySPI(VSPI);
+lora lorafiit(RFM_CS, RFM_INT, RFM_RST, mySPI);
 
-void setup() {
+void setup() {  
+  mySPI.begin(5,19,27,18); // SCLK, MISO, MOSI, SS
+
   Serial.flush();
   while(!Serial);
   Serial.begin(115200);//Sets Baud rate
